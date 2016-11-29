@@ -1,0 +1,18 @@
+#                                                                        #
+# Security policy for the Neos PackageManager package                    #
+#                                                                        #
+
+privilegeTargets:
+
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+
+    'Neos.PackageManager:Backend.Module.Administration.Packages':
+          matcher: 'method(Neos\PackageManager\Controller\Module\Administration\PackagesController->(index|activate|deactivate|delete|freeze|unfreeze|batch)Action())'
+
+roles:
+
+  'Neos.Neos:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'Neos.PackageManager:Backend.Module.Administration.Packages'
+        permission: GRANT

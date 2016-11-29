@@ -1,0 +1,26 @@
+#                                                                        #
+# Settings                                                               #
+#                                                                        #
+# This file contains settings for various parts of the application.      #
+# Just add your own modifications as necessary.                          #
+#                                                                        #
+# Please refer to the default settings file(s) or the manuals for        #
+# possible configuration options.                                        #
+#                                                                        #
+
+Neos:
+  Neos:
+    modules:
+      management:
+        submodules:
+          packages:
+            label: 'Neos.PackageManager:Modules:packages.label'
+            controller: \Neos\PackageManager\Controller\Module\Administration\PackagesController
+            description: 'Neos.PackageManager:Modules:packages.description'
+            icon: icon-archive
+            privilegeTarget: 'Neos.PackageManager:Backend.Module.Administration.Packages'
+    userInterface:
+      translation:
+        autoInclude:
+          Neos.PackageManager:
+            - Modules
